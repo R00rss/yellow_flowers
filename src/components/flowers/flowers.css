@@ -1,0 +1,163 @@
+.garden {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.garden-group {
+  position: absolute;
+  inset: 0;
+}
+
+.garden-layer {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+}
+
+.garden-layer--far {
+  opacity: 0.82;
+}
+
+.garden-layer--mid {
+  opacity: 1;
+}
+
+.garden-layer--near {
+  opacity: 0.97;
+}
+
+/* Perspectiva atmosférica: capas de bruma entre planos de profundidad. */
+.garden-depth {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.garden-depth--0 {
+  background: linear-gradient(
+    to top,
+    rgba(11, 23, 17, 0.58) 0%,
+    rgba(11, 23, 17, 0.24) 34%,
+    rgba(11, 23, 17, 0) 62%
+  );
+}
+
+.garden-depth--1 {
+  background: linear-gradient(
+    to top,
+    rgba(11, 23, 17, 0.76) 0%,
+    rgba(11, 23, 17, 0.38) 26%,
+    rgba(20, 37, 27, 0.1) 54%,
+    rgba(11, 23, 17, 0) 72%
+  );
+}
+
+/* ---------------------------------------------------------------- Sockets */
+
+.flower {
+  position: absolute;
+  /* Paleta por defecto: sol pleno */
+  --petal-base: #d99a24;
+  --petal-mid: #f0bd35;
+  --petal-tip: #f8dc86;
+  --petal-edge: #fff3cf;
+  --petal-back-base: #b87c15;
+  --petal-back-mid: #dda52a;
+  --petal-back-tip: #f0c95c;
+  --center-light: #b3873a;
+  --center-mid: #6b4318;
+  --center-deep: #3a2410;
+  --center-line: #1e1005;
+  --leaf-light: #4f7a55;
+  --leaf-mid: #3d6b45;
+  --leaf-deep: #1e4027;
+  --leaf-shadow: #0e2114;
+  --head-glow: rgba(244, 197, 66, 0.34);
+  --head-glow-soft: rgba(229, 169, 47, 0.12);
+}
+
+.flower.pal-0 {
+  --petal-base: #e0a428;
+  --petal-mid: #f4c542;
+  --petal-tip: #f8e39d;
+  --petal-edge: #fff8e7;
+  --petal-back-base: #c58c1c;
+  --petal-back-mid: #e3ac2f;
+  --petal-back-tip: #eec659;
+  --head-glow: rgba(255, 216, 92, 0.4);
+  --head-glow-soft: rgba(244, 197, 66, 0.14);
+}
+
+.flower.pal-1 {
+  --petal-base: #ce8f1d;
+  --petal-mid: #e8b32f;
+  --petal-tip: #f0cf7a;
+  --petal-edge: #fff2cd;
+  --petal-back-base: #a76f12;
+  --petal-back-mid: #cf9525;
+  --petal-back-tip: #e8c25d;
+  --center-light: #a97b32;
+  --center-mid: #5e3a14;
+  --center-deep: #331e0c;
+  --leaf-light: #456b4c;
+  --leaf-mid: #36603d;
+  --leaf-deep: #1a3a22;
+  --head-glow: rgba(232, 179, 47, 0.34);
+  --head-glow-soft: rgba(200, 145, 40, 0.12);
+}
+
+.flower.pal-2 {
+  --petal-base: #b57c17;
+  --petal-mid: #d29b24;
+  --petal-tip: #e6bf62;
+  --petal-edge: #f7e6b5;
+  --petal-back-base: #8f5f0e;
+  --petal-back-mid: #b8811b;
+  --petal-back-tip: #d9ae4b;
+  --center-light: #8f6526;
+  --center-mid: #4d2e0f;
+  --center-deep: #291808;
+  --leaf-light: #3c6244;
+  --leaf-mid: #2c5333;
+  --leaf-deep: #15301c;
+  --head-glow: rgba(210, 155, 36, 0.3);
+  --head-glow-soft: rgba(180, 125, 30, 0.1);
+}
+
+.flower.pal-3 {
+  --petal-base: #8a5c12;
+  --petal-mid: #a97618;
+  --petal-tip: #c99f3f;
+  --petal-edge: #e2c680;
+  --petal-back-base: #6b450c;
+  --petal-back-mid: #8c6112;
+  --petal-back-tip: #ae8330;
+  --center-light: #6d4b1c;
+  --center-mid: #38220b;
+  --center-deep: #1c1005;
+  --center-line: #140b04;
+  --leaf-light: #2c4b33;
+  --leaf-mid: #204027;
+  --leaf-deep: #102417;
+  --leaf-shadow: #08150d;
+  --head-glow: rgba(160, 115, 28, 0.24);
+  --head-glow-soft: rgba(140, 100, 26, 0.08);
+}
+
+.flower-tilt {
+  width: 100%;
+  height: 100%;
+  transform-origin: 50% 100%;
+}
+
+.flower-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.head-glow {
+  opacity: 0.9;
+}

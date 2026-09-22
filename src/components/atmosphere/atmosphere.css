@@ -1,0 +1,224 @@
+.atmosphere {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.atmosphere-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.atmosphere--back {
+  opacity: 1;
+}
+
+.atmosphere--front {
+  opacity: 1;
+}
+
+/* Resplandor central que despierta la escena. */
+.light-base {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  width: 78vmax;
+  height: 78vmax;
+  margin-left: -39vmax;
+  margin-top: -39vmax;
+  background: radial-gradient(
+    circle closest-side,
+    rgba(255, 251, 236, 0.99) 0%,
+    rgba(255, 241, 180, 0.96) 7%,
+    rgba(252, 217, 108, 0.9) 17%,
+    rgba(244, 197, 66, 0.74) 30%,
+    rgba(230, 171, 48, 0.48) 46%,
+    rgba(201, 141, 32, 0.22) 64%,
+    rgba(160, 110, 22, 0.06) 82%,
+    rgba(11, 23, 17, 0) 100%
+  );
+  mix-blend-mode: screen;
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+.light-bloom {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  width: 68vmax;
+  height: 68vmax;
+  margin-left: -34vmax;
+  margin-top: -34vmax;
+  background: radial-gradient(
+    circle closest-side,
+    rgba(255, 250, 232, 0.72) 0%,
+    rgba(247, 214, 110, 0.42) 24%,
+    rgba(229, 169, 47, 0.14) 52%,
+    rgba(11, 23, 17, 0) 74%
+  );
+  opacity: 0;
+  mix-blend-mode: screen;
+  will-change: opacity, transform;
+}
+
+/* Rayos de luz atravesando el aire. */
+.light-shafts {
+  position: absolute;
+  inset: -20% -10% 0 -10%;
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+.light-shaft {
+  position: absolute;
+  top: -10%;
+  height: 130%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 241, 196, 0.3) 0%,
+    rgba(244, 197, 66, 0.13) 42%,
+    rgba(244, 197, 66, 0) 100%
+  );
+  filter: blur(18px);
+  mix-blend-mode: screen;
+  transform-origin: 50% 0%;
+}
+
+.light-shaft--0 {
+  left: 12%;
+  width: 9%;
+  transform: rotate(16deg);
+}
+
+.light-shaft--1 {
+  left: 26%;
+  width: 5%;
+  transform: rotate(21deg);
+  opacity: 0.7;
+}
+
+.light-shaft--2 {
+  left: 44%;
+  width: 12%;
+  transform: rotate(12deg);
+  opacity: 0.5;
+}
+
+.light-shaft--3 {
+  left: 62%;
+  width: 6%;
+  transform: rotate(18deg);
+  opacity: 0.62;
+}
+
+.light-shaft--4 {
+  left: 78%;
+  width: 10%;
+  transform: rotate(24deg);
+  opacity: 0.45;
+}
+
+/* Bruma cálida cerca del horizonte. */
+.light-haze {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  will-change: opacity;
+}
+
+.haze-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  mix-blend-mode: screen;
+}
+
+.haze-blob--0 {
+  left: 4%;
+  bottom: 14%;
+  width: 46vmax;
+  height: 22vmax;
+  background: radial-gradient(ellipse closest-side, rgba(244, 197, 66, 0.3) 0%, rgba(244, 197, 66, 0) 100%);
+}
+
+.haze-blob--1 {
+  left: 42%;
+  bottom: 6%;
+  width: 60vmax;
+  height: 26vmax;
+  background: radial-gradient(ellipse closest-side, rgba(255, 226, 150, 0.26) 0%, rgba(255, 226, 150, 0) 100%);
+}
+
+.haze-blob--2 {
+  right: 2%;
+  bottom: 18%;
+  width: 40vmax;
+  height: 20vmax;
+  background: radial-gradient(ellipse closest-side, rgba(229, 169, 47, 0.28) 0%, rgba(229, 169, 47, 0) 100%);
+}
+
+/* Luz baja del atardecer sobre la línea del suelo. */
+.light-horizon {
+  position: absolute;
+  left: -14%;
+  right: -14%;
+  bottom: 8%;
+  height: 34vmax;
+  background: radial-gradient(
+    ellipse 62% 74% at 50% 58%,
+    rgba(255, 231, 158, 0.22) 0%,
+    rgba(229, 169, 47, 0.11) 46%,
+    rgba(11, 23, 17, 0) 78%
+  );
+  mix-blend-mode: screen;
+  opacity: 0;
+  will-change: opacity;
+}
+
+/* Viñeta frontal: asienta la profundidad de la escena. */
+.vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse at 50% 44%,
+      rgba(11, 23, 17, 0) 32%,
+      rgba(11, 23, 17, 0.42) 72%,
+      rgba(6, 14, 10, 0.78) 100%
+    ),
+    linear-gradient(to top, rgba(6, 14, 10, 0.6) 0%, rgba(6, 14, 10, 0) 26%);
+}
+
+.grain {
+  position: absolute;
+  inset: -25%;
+  opacity: 0.04;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='420'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='3'/%3E%3C/filter%3E%3Crect width='420' height='420' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+  background-size: 420px 420px;
+  animation: grain-drift 14s steps(4) infinite;
+}
+
+@keyframes grain-drift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  25% {
+    transform: translate3d(-1.4%, 1%, 0);
+  }
+  50% {
+    transform: translate3d(0.9%, -0.8%, 0);
+  }
+  75% {
+    transform: translate3d(-0.6%, -1.2%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}

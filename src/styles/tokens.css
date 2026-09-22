@@ -1,0 +1,62 @@
+:root {
+  color-scheme: dark;
+
+  /* ---- Environment -------------------------------------------------- */
+  --midnight: #0b1711;
+  --forest-deep: #0e1c14;
+  --forest: #14251b;
+  --moss: #1b3124;
+  --mist: rgba(247, 230, 181, 0.06);
+
+  /* ---- Gold --------------------------------------------------------- */
+  --sunflower: #f4c542;
+  --gold: #e5a92f;
+  --gold-deep: #c08a1f;
+  --gold-shadow: #7d5410;
+
+  /* ---- Light -------------------------------------------------------- */
+  --champagne: #f7e6b5;
+  --ivory: #fff8e7;
+  --glow: rgba(244, 197, 66, 0.55);
+
+  /* ---- Foliage ------------------------------------------------------ */
+  --leaf-light: #46744d;
+  --leaf-mid: #2a4e31;
+  --leaf-deep: #17301d;
+  --leaf-shadow: #0f2115;
+
+  /* ---- Type --------------------------------------------------------- */
+  --font-display: 'Cormorant Garamond', 'Iowan Old Style', 'Palatino Linotype', Georgia,
+    'Times New Roman', serif;
+  --font-sans: 'Manrope Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --tracking-wide: 0.14em;
+  --tracking-wider: 0.28em;
+
+  /* ---- Motion ------------------------------------------------------- */
+  --ease-cinematic: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-soft: cubic-bezier(0.4, 0.14, 0.3, 1);
+  --dur-fast: 0.32s;
+  --dur-med: 0.7s;
+  --dur-slow: 1.4s;
+
+  /* ---- Depth -------------------------------------------------------- */
+  --blur-far: 1.4px;
+  --blur-near: 0.6px;
+  --shadow-deep: 0 32px 90px -40px rgba(0, 0, 0, 0.9);
+  --shadow-paper: 0 40px 120px -30px rgba(0, 0, 0, 0.85), 0 4px 24px rgba(0, 0, 0, 0.5);
+
+  /* ---- Safe areas --------------------------------------------------- */
+  --safe-top: max(1rem, env(safe-area-inset-top));
+  --safe-bottom: max(1rem, env(safe-area-inset-bottom));
+  --safe-left: max(1rem, env(safe-area-inset-left));
+  --safe-right: max(1rem, env(safe-area-inset-right));
+
+  /* ---- Papel de la carta -------------------------------------------- */
+  --paper-1: #fdf7e6;
+  --paper-2: #f7ebd1;
+  --paper-3: #efe0bf;
+  --ink: #33291a;
+  --ink-soft: #5a4a31;
+  --ink-gold: #8a6512;
+}
